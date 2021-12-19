@@ -44,9 +44,15 @@ BrightfoxNetwork.prototype.myPlugins = function myPlugins (cb) {
     });
 };
 
-BrightfoxNetwork.prototype.getVersion = function getVersion (uuid, version, cb) {
-    fetch(this.url + '/versions/retrieve/' + uuid + "/" + version).then(res => res.json()).then((data) => {
-        cb(null, data.version);
+/**
+ * Get the the source for a certain version
+ * @param uuid String The uuid of the plugin
+ * @param version ??? The version of the plugin
+ * @param cb function The callback which gets (err, data) where data is a string
+ */ 
+BrightfoxNetwork.prototype.getVersionSource = function getVersionSource (uuid, version, cb) {
+    fetch(this.url + '/sources/' + uuid + "v" + version + '.js').then(res => res.text()).then((data) => {
+        cb(null, data);
     });
 };
 
