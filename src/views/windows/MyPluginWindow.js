@@ -15,6 +15,7 @@ function MyPluginsWindow (gui, network) {
 
     this._network.myPlugins((err, list) => {
         for (var k = 0; k < list.length; k++) {
+            list[k].myPlugin = true;
             content.appendChild(new PluginCard(this._gui, this._network, list[k]).toDOM());
         }
     });

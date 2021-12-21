@@ -1,3 +1,12 @@
+/**
+ * 
+ * @param {*} gui 
+ * @param {*} network 
+ * @param {
+ * 	myPlugin: Boolean, // If true, we will request all versions for this plugin even unverified ones
+ * } pluginData 
+ */
+
 function PluginCard (gui, network, pluginData) {
     this._gui = gui;
 	this._network = network;
