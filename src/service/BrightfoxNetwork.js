@@ -27,7 +27,7 @@ BrightfoxNetwork.prototype.getPluginList = function getPluginList (cb) {
 };
 
 BrightfoxNetwork.prototype.getVersions = function getVersions (uuid, unverified, cb) {
-    fetch(this.url + '/versions/list/' + uuid + '/' + unverified ? 'all' : '').then(function (res) { return res.json() }).then(function (data) {
+    fetch(this.url + '/versions/list/' + uuid + '/' + (unverified ? 'all' : '')).then(function (res) { return res.json() }).then(function (data) {
         cb(null, data.versions);
     });
 };

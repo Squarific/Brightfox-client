@@ -19,21 +19,21 @@ BrightfoxStore.prototype.openMainMenu = function openMainMenu () {
 
     var button = content.appendChild(document.createElement("div"));
 	button.classList = "pluginstore-button";
-	button.appendChild(document.createTextNode("List all plugins"));
+	button.appendChild(document.createTextNode("Find a new plugin"));
 	button.addEventListener("click", function () {
 		this.openPluginList();
 	}.bind(this));
 
     var button = content.appendChild(document.createElement("div"));
 	button.classList = "pluginstore-button";
-	button.appendChild(document.createTextNode("Add new plugin"));
+	button.appendChild(document.createTextNode("Make your own plugin"));
 	button.addEventListener("click", function () {
 		const newPluginWindow = new NewPluginWindow(this._gui, this._network);
 	}.bind(this));
 
     var button = content.appendChild(document.createElement("div"));
 	button.classList = "pluginstore-button";
-	button.appendChild(document.createTextNode("My plugins"));
+	button.appendChild(document.createTextNode("List my own plugins"));
 	button.addEventListener("click", function () {
 		const myPluginWindow = new MyPluginsWindow(this._gui, this._network);
 	}.bind(this));
