@@ -34,7 +34,7 @@ PluginWindow.prototype._addVersions = function _addVersions (content) {
     var title = content.appendChild(document.createElement("h3"));
 	title.appendChild(document.createTextNode("Versions"));
 
-    this._network.getVersions(this._pluginData.uuid, this._pluginData.myPlugin, (err, versions) => {
+    this._network.getVersions(this._pluginData.uuid, (err, versions) => {
         for (var k = 0; k < versions.length; k++) {
             content.appendChild(new VersionCard(this._gui, this._network, this._pluginData, versions[k]).toDOM());
         }
